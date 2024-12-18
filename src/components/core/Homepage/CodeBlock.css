@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #00003f;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  /* Container holding the blob */
+  .blob {
+    position: absolute;
+    opacity: 0.5;
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(47deg, rgba(255, 88, 139, 1) 21%, rgb(0 164 173) 67%, rgba(118, 74, 166, 1) 81%);
+    filter: blur(40px);
+    z-index: -1;
+    animation: blobAnimation 10s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite alternate forwards;
+  }
+  
+  @keyframes blobAnimation {
+    0% {
+      transform: translate(40%, -25%) scale(1);
+      border-radius: 60% 40% 30% 70% / 100% 85% 92% 74%;
+    }
+    50% {
+      transform: translate(0%, 13%) rotate(41deg) scale(1.15);
+      border-radius: 20% 71% 47% 70% / 81% 15% 22% 54%;
+    }
+    100% {
+      transform: translate(-45%, 39%) rotate(-60deg) scale(1.05);
+      border-radius: 100% 75% 92% 74% / 60% 80% 30% 70%;
+    }
+  }
+  
+  /* Card-like code block section */
+  .code-card {
+    background: linear-gradient(111.93deg, rgba(14, 26, 45, 0.24) -1.4%, rgba(17, 30, 50, 0.38) 104.96%);
+    border: 1px solid transparent;
+    border-image: linear-gradient(121.74deg, rgba(255, 255, 255, 0.22) -7.75%, rgba(255, 255, 255, 0) 37.38%);
+    border-image-slice: 1;
+    border-radius: 20px;
+    padding: 2rem;
+  }
+  
