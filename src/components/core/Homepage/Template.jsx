@@ -3,8 +3,8 @@ import LoginForm from "./LoginForm";
 import SignupForm from "./SignupForm";
 import frame from "../../../assets/Images/frame.png";
 import HighlightText from "./HighlightText";
-import { FcGoogle } from "react-icons/fc";
-import FTAbutton from "../Homepage/Button";
+// import { FcGoogle } from "react-icons/fc";
+// import FTAbutton from "../Homepage/Button";
 
 const Template = ({ title, desc1, desc2, formType, image }) => {
   return (
@@ -23,18 +23,19 @@ const Template = ({ title, desc1, desc2, formType, image }) => {
         {formType === "signup" ? <SignupForm /> : <LoginForm />}
         
         <div className="w-[508px]">
-        <div className="w-[508px] flex flex-row my-4 items-center gap-x-2">
+        {/* <div className="w-[508px] flex flex-row my-4 items-center gap-x-2">
           <div className="w-[508px] h-[1px] bg-richblack-700"></div>
           <p className="text-richblack-700">OR</p>
           <div className="w-[508px] h-[1px] bg-richblack-700"></div>
-        </div>
+        </div> */}
 
-        <FTAbutton active={false} linkto={"/#"}>
-          <div className=" flex text-center items-center gap-2 text-white justify-center">
-            <FcGoogle />
+        {/* <FTAbutton active={false} linkto={"/#"}>
+          <div  className="mt-6 h-[20px] rounded-[8px] px-[12px] font-medium text-white flex text-center items-center gap-2 justify-center">
+          {/* <div className=" flex text-center items-center gap-2 text-white justify-center"> */}
+            {/* <FcGoogle />
             Sign Up With Google
-          </div>
-        </FTAbutton>
+          </div> */}
+        {/* </FTAbutton> */} 
         </div>
 
       </div>

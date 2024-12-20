@@ -90,9 +90,9 @@ function SignupForm() {
       {/* Tab */}
       <Tab tabData={tabData} field={accountType} setField={setAccountType} />
       {/* Form */}
-      <form onSubmit={handleOnSubmit} className="flex w-[508px] flex-col gap-y-4">
-        <div className="flex gap-x-4">
-          <label>
+      <form onSubmit={handleOnSubmit} className="flex w-full flex-col gap-y-4">
+        <div className="flex flex-wrap gap-x-4 w-full">
+          <label className="w-full sm:w-[48%]">
             <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-richblack-5">
               First Name <sup className="text-pink-200">*</sup>
             </p>
@@ -103,13 +103,10 @@ function SignupForm() {
               value={firstName}
               onChange={handleOnChange}
               placeholder="Enter first name"
-              style={{
-                boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
-              }}
-              className="w-full rounded-[0.5rem] bg-richblack-800 p-[12px] text-richblack-5"
+              className="form-style w-full"
             />
           </label>
-          <label>
+          <label className="w-full sm:w-[48%]">
             <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-richblack-5">
               Last Name <sup className="text-pink-200">*</sup>
             </p>
@@ -120,10 +117,7 @@ function SignupForm() {
               value={lastName}
               onChange={handleOnChange}
               placeholder="Enter last name"
-              style={{
-                boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
-              }}
-              className="w-full rounded-[0.5rem] bg-richblack-800 p-[12px] text-richblack-5"
+              className="form-style w-full"
             />
           </label>
         </div>
@@ -138,14 +132,11 @@ function SignupForm() {
             value={email}
             onChange={handleOnChange}
             placeholder="Enter email address"
-            style={{
-              boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
-            }}
-            className="w-full rounded-[0.5rem] bg-richblack-800 p-[12px] text-richblack-5"
+            className="form-style w-full"
           />
         </label>
-        <div className="flex gap-x-4">
-          <label className="relative">
+        <div className="flex flex-wrap gap-x-4 gap-y-4">
+          <label className="relative w-full sm:w-[48%]">
             <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-richblack-5">
               Create Password <sup className="text-pink-200">*</sup>
             </p>
@@ -156,10 +147,7 @@ function SignupForm() {
               value={password}
               onChange={handleOnChange}
               placeholder="Enter Password"
-              style={{
-                boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
-              }}
-              className="w-full rounded-[0.5rem] bg-richblack-800 p-[12px] pr-10 text-richblack-5"
+              className="form-style w-full !pr-10"
             />
             <span
               onClick={() => setShowPassword((prev) => !prev)}
@@ -172,7 +160,7 @@ function SignupForm() {
               )}
             </span>
           </label>
-          <label className="relative">
+          <label className="relative w-full sm:w-[48%]">
             <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-richblack-5">
               Confirm Password <sup className="text-pink-200">*</sup>
             </p>
@@ -183,10 +171,7 @@ function SignupForm() {
               value={confirmPassword}
               onChange={handleOnChange}
               placeholder="Confirm Password"
-              style={{
-                boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
-              }}
-              className="w-full rounded-[0.5rem] bg-richblack-800 p-[12px] pr-10 text-richblack-5"
+              className="form-style w-full !pr-10"
             />
             <span
               onClick={() => setShowConfirmPassword((prev) => !prev)}
@@ -208,7 +193,9 @@ function SignupForm() {
         </button>
       </form>
     </div>
-  )
+  );
+  
+  
 }
 
 export default SignupForm
