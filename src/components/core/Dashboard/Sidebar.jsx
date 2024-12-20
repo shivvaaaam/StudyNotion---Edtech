@@ -12,7 +12,11 @@ const Sidebar = () => {
   const { loading: authLoading } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  
   const [confirmationModal, setConfirmationModal] = useState(null);
+  
+  // State to track visibility of the sidebar on smaller screens
+  const [isSidebarVisible, setIsSidebarVisible] = useState(false);
 
   if (profileLoading || authLoading) {
     return <div className="mt-10">Loading...</div>;
@@ -20,10 +24,11 @@ const Sidebar = () => {
 
   return (
     <div className="text-white fixed mt-[3rem]">
+      {/* Sidebar container with conditional visibility based on screen size */}
       <div
-        className="flex min-w-[222px] flex-col h-screen 
-        border-r-[1px] border-r-richblack-700 bg-richblack-800 py-10
-        md:relative md:w-full"
+        className={`flex min-w-[222px] flex-col h-screen border-r-[1px] border-r-richblack-700 bg-richblack-800 py-10 md:relative md:w-full ${
+          isSidebarVisible ? "block" : "hidden md:block"
+        }`} // Sidebar visibility toggled on smaller screens with state
       >
         {/* Sidebar Links */}
         <div className="flex flex-col">
@@ -63,6 +68,14 @@ const Sidebar = () => {
           </button>
         </div>
       </div>
+
+      {/* Hamburger Button for mobile screens */}
+      <button
+        onClick={() => setIsSidebarVisible(!isSidebarVisible)} // Toggle sidebar visibility
+        className="md:hidden absolute top-4 left-4 z-10"
+      >
+        <VscSignOut className="text-white" />
+      </button>
 
       {/* Confirmation Modal */}
       {confirmationModal && <Confirmationmodal modalData={confirmationModal} />}

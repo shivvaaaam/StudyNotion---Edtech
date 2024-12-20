@@ -8,7 +8,7 @@ const MyProfile = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex justify-center items-center w-full min-h-screen p-4 lg:p-10 lg:ml-[24rem] sm:ml-[20rem] mt-[8rem]">
+    <div className="flex justify-center items-center w-full min-h-screen p-4 lg:p-10 lg:ml-[24rem] sm:ml-[20rem] mt-[10rem]">
       {/* Inner Wrapper */}
       <div className="flex flex-col items-center w-full max-w-[800px] space-y-5 mt-[-10rem]">
         {/* Section 1 */}

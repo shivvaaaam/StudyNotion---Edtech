@@ -27,7 +27,7 @@ const UpdatePassword = () => {
 
           <div className='flex gap-5'>
             <div className='flex flex-col w-[48%]'>
-              <label htmlFor="password">Current Password</label>
+              <label className='relative' htmlFor="password">Current Password</label>
               <input
               type={showPassword ? "text" : "password"}
               name='password'
@@ -36,7 +36,7 @@ const UpdatePassword = () => {
               placeholder='Enter current Password'
               {...register("password",{required:true})}
               />
-              <span onClick={() => setShowPassword((prev) => !prev)}>
+              <span className='absolute z-[100] right-[43rem] top-[58rem]' onClick={() => setShowPassword((prev) => !prev)}>
                   {
                     showPassword ? (<AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF"/>) : 
                     (<AiOutlineEye fontSize={24} fill="#AFB2BF" />)
@@ -50,7 +50,7 @@ const UpdatePassword = () => {
             </div>
 
             <div className='flex flex-col w-[48%]'>
-            <label htmlFor="newpassword">New Password</label>
+            <label className='relative' htmlFor="newpassword">New Password</label>
               <input
               type={showConfirmPassword ? "text" : "password"}
               name='newpassword'
@@ -59,7 +59,7 @@ const UpdatePassword = () => {
               placeholder='Enter new Password'
               {...register("newpassword",{required:true})}
               />
-              <span onClick={() => setShowConfirmPassword((prev) => !prev)}>
+              <span className='absolute z-[100] right-[21rem] top-[58rem]' onClick={() => setShowConfirmPassword((prev) => !prev)}>
                   {
                     showConfirmPassword ? (<AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF"/>) : 
                     (<AiOutlineEye fontSize={24} fill="#AFB2BF" />)

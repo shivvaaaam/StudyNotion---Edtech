@@ -8,9 +8,10 @@ export default function Cart() {
 
   console.log("printing total", total);
   console.log("printing total", totalItems);
+
   return (
-    <div className="ml-[25rem]">
-      <h1 className="mb-14 text-3xl font-medium text-richblack-5">Cart</h1>
+    <div className="ml-[0rem] lg:ml-[25rem] p-4 lg:p-8 mt-[5rem] ">
+      <h1 className="mb-6 md:mt-[5rem] text-3xl font-medium text-richblack-5">Cart</h1>
       <p className="border-b border-b-richblack-400 pb-2 font-semibold text-richblack-400">
         {totalItems} Courses in Cart
       </p>
